@@ -1,11 +1,9 @@
-﻿using ProjectCosplay.Models;
-
-namespace exemple_API_ASPNET.Models
+﻿namespace ProjectCosplay.Models
 {
     public class CommandeCosplay
     {
         public int CommandeCosplayID { get; set; }
-        public List<Cosplay> LstCosplay { get; set; }
-        public double Prix { get; set; }
+        public List<Cosplay> Lstcosplays { get; set; }
+        public int Prix { get; set; }
     }
 }

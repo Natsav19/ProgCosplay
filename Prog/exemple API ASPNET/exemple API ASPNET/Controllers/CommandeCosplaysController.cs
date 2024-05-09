@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectCosplay.Data;
-using exemple_API_ASPNET.Models;
+using ProjectCosplay.Models;
 
-namespace exemple_API_ASPNET.Controllers
+namespace ProjectCosplay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
