@@ -35,7 +35,6 @@ namespace ProjectCosplay.Controllers
           }
           return await _context.Cosplay.ToListAsync();
         }
-        [Authorize]
         // GET: api/Cosplays/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cosplay>> GetCosplay(int id)
@@ -57,7 +56,7 @@ namespace ProjectCosplay.Controllers
 
             return cosplay;
         }
-
+        [Authorize]
         // PUT: api/Cosplays/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

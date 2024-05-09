@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using ProjectCosplay.Models;
+using exemple_API_ASPNET.Models;
 
 namespace ProjectCosplay.Data
 {
@@ -17,5 +18,7 @@ namespace ProjectCosplay.Data
         }
 
         public DbSet<ProjectCosplay.Models.Cosplay> Cosplay { get; set; } = default!;
+
+        public DbSet<exemple_API_ASPNET.Models.CommandeCosplay>? CommandeCosplay { get; set; }
     }
 }

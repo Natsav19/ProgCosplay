@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x5ITFwc5QMGzLnxLepTr1/UrYavwJTzbeSGicvt3ZzebFKdpjgfu3AavMVqyMgBMsu1V2+uPiZ8s2FMjRKkKZw==",
+  "dgSpecHash": "m4p5ImaJx6tHw/MRPrCSJMadP8A/BdMDLqKITKWWxZjGKibN3KdSJ7qvcRo6jgaVvpUiRRdJs0xK5GvLq/q0xw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
+  "projectFilePath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2233318\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\2233318\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

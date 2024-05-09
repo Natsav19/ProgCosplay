@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj": {}
+    "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj": {
+    "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
+        "projectUniqueName": "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
         "projectName": "ProjectCosplay",
-        "projectPath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
+        "projectPath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\ProjectCosplay.csproj",
         "packagesPath": "C:\\Users\\2233318\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\projetweb\\Prog\\exemple API ASPNET\\exemple API ASPNET\\obj\\",
+        "outputPath": "C:\\Users\\2233318\\Documents\\Code\\Web3\\PROJET\\ProgCosplay\\Prog\\exemple API ASPNET\\exemple API ASPNET\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
