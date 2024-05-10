@@ -49,10 +49,6 @@ namespace ProjectCosplay.Controllers
             {
                 return NotFound();
             }
-            if (!IsAdmin() && cosplay.ProprietaireId != GetUserName())
-            {
-                return NotFound();
-            }
 
             return cosplay;
         }
