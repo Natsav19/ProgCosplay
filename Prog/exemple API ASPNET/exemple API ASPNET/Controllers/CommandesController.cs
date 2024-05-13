@@ -16,20 +16,20 @@ namespace ProjectCosplay.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class CommandeCosplaysController : ControllerBase
+    public class CommandesController : ControllerBase
     {
         private readonly ProjectCosplayContext _context;
 
-        public CommandeCosplaysController(ProjectCosplayContext context)
+        public CommandesController(ProjectCosplayContext context)
         {
             _context = context;
         }
 
-        // GET: api/CommandeCosplays
+        // GET: api/Commandes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CommandeCosplay>>> GetCommandeCosplay()
+        public async Task<ActionResult<IEnumerable<Commande>>> GetCommande()
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.Commande == null)
             {
                 return NotFound();
             }
@@ -37,20 +37,20 @@ namespace ProjectCosplay.Controllers
             {
                 return NotFound();
             }
-            return await _context.CommandeCosplay.ToListAsync();
+            return await _context.Commande.ToListAsync();
         }
 
-        // GET: api/CommandeCosplays/5
+        // GET: api/Commandes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CommandeCosplay>> GetCommandeCosplay(int id)
+        public async Task<ActionResult<Commande>> GetCommande(int id)
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.Commande == null)
             {
                 return NotFound();
             }
-            var commandeCosplay = await _context.CommandeCosplay.FindAsync(id);
+            var commande = await _context.Commande.FindAsync(id);
 
-            if (commandeCosplay == null)
+            if (commande == null)
             {
                 return NotFound();
             }
@@ -59,15 +59,15 @@ namespace ProjectCosplay.Controllers
                 return NotFound();
             }
 
-            return commandeCosplay;
+            return commande;
         }
 
-        // PUT: api/CommandeCosplays/5
+        // PUT: api/Commandes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCommandeCosplay(int id, CommandeCosplay commandeCosplay)
+        public async Task<IActionResult> PutCommande(int id, Commande commande)
         {
-            if (id != commandeCosplay.CommandeCosplayID)
+            if (id != commande.CommandeID)
             {
                 return BadRequest();
             }
@@ -75,7 +75,8 @@ namespace ProjectCosplay.Controllers
             {
                 return NotFound();
             }
-            _context.Entry(commandeCosplay).State = EntityState.Modified;
+
+            _context.Entry(commande).State = EntityState.Modified;
 
             try
             {
@@ -83,7 +84,7 @@ namespace ProjectCosplay.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CommandeCosplayExists(id))
+                if (!CommandeExists(id))
                 {
                     return NotFound();
                 }
@@ -96,35 +97,35 @@ namespace ProjectCosplay.Controllers
             return NoContent();
         }
 
-        // POST: api/CommandeCosplays
+        // POST: api/Commandes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CommandeCosplay>> PostCommandeCosplay(CommandeCosplay commandeCosplay)
+        public async Task<ActionResult<Commande>> PostCommande(Commande commande)
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.Commande == null)
             {
-                return Problem("Entity set 'ProjectCosplayContext.CommandeCosplay'  is null.");
+                return Problem("Entity set 'ProjectCosplayContext.Commande'  is null.");
             }
             if (!IsAdmin())
             {
                 return NotFound();
             }
-            _context.CommandeCosplay.Add(commandeCosplay);
+            _context.Commande.Add(commande);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCommandeCosplay", new { id = commandeCosplay.CommandeCosplayID }, commandeCosplay);
+            return CreatedAtAction("GetCommande", new { id = commande.CommandeID }, commande);
         }
 
-        // DELETE: api/CommandeCosplays/5
+        // DELETE: api/Commandes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCommandeCosplay(int id)
+        public async Task<IActionResult> DeleteCommande(int id)
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.Commande == null)
             {
                 return NotFound();
             }
-            var commandeCosplay = await _context.CommandeCosplay.FindAsync(id);
-            if (commandeCosplay == null)
+            var commande = await _context.Commande.FindAsync(id);
+            if (commande == null)
             {
                 return NotFound();
             }
@@ -133,15 +134,15 @@ namespace ProjectCosplay.Controllers
                 return NotFound();
             }
 
-            _context.CommandeCosplay.Remove(commandeCosplay);
+            _context.Commande.Remove(commande);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CommandeCosplayExists(int id)
+        private bool CommandeExists(int id)
         {
-            return (_context.CommandeCosplay?.Any(e => e.CommandeCosplayID == id)).GetValueOrDefault();
+            return (_context.Commande?.Any(e => e.CommandeID == id)).GetValueOrDefault();
         }
 
         private bool IsAdmin()

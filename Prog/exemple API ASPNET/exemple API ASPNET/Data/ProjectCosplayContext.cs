@@ -19,5 +19,7 @@ namespace ProjectCosplay.Data
         public DbSet<ProjectCosplay.Models.Cosplay> Cosplay { get; set; } = default!;
 
         public DbSet<ProjectCosplay.Models.CommandeCosplay>? CommandeCosplay { get; set; }
+
+        public DbSet<ProjectCosplay.Models.Commande>? Commande { get; set; }
     }
 }
