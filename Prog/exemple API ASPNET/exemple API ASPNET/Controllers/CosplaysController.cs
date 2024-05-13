@@ -64,7 +64,7 @@ namespace ProjectCosplay.Controllers
                 return BadRequest();
             }
             var cosplayBD = await _context.Cosplay.FindAsync(id);
-            if(cosplayBD == null && (cosplayBD.ProprietaireId == GetUserName() || IsAdmin()))
+            if(cosplayBD.ProprietaireId == GetUserName() || IsAdmin())
             {
                 cosplayBD.Titre = cosplay.Titre;
                 _context.Entry(cosplay).State = EntityState.Modified;
