@@ -1,8 +1,8 @@
 ﻿namespace ProjectCosplay.Models
 {
-    public class Commande
+    public class Commandes
     {
-        public int CommandeID { get; set; }
+        public int CommandesID { get; set; }
         public string NomClient { get; set; }
         public double Prix { get; set; }
     }

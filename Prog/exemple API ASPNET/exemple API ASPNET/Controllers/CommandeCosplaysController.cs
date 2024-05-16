@@ -11,7 +11,7 @@ using ProjectCosplay.Authentification;
 using ProjectCosplay.Data;
 using ProjectCosplay.Models;
 
-namespace ProjectCosplay.Controllers
+namespace exemple_API_ASPNET.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,55 +27,62 @@ namespace ProjectCosplay.Controllers
 
         // GET: api/CommandeCosplays
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CommandeCosplay>>> GetCommandeCosplay()
+        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays()
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.CommandeCosplays == null)
             {
                 return NotFound();
             }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
-            return await _context.CommandeCosplay.ToListAsync();
+            return await _context.CommandeCosplays.ToListAsync();
         }
 
         // GET: api/CommandeCosplays/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CommandeCosplay>> GetCommandeCosplay(int id)
+        public async Task<ActionResult<CommandeCosplays>> GetCommandeCosplays(int id)
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.CommandeCosplays == null)
             {
                 return NotFound();
             }
-            var commandeCosplay = await _context.CommandeCosplay.FindAsync(id);
+            var commandeCosplays = await _context.CommandeCosplays.FindAsync(id);
 
-            if (commandeCosplay == null)
-            {
-                return NotFound();
-            }
-            if (!IsAdmin())
+            if (commandeCosplays == null)
             {
                 return NotFound();
             }
 
-            return commandeCosplay;
+            return commandeCosplays;
         }
+        /*[HttpGet]
+        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays([FromQuery] string ClientID, [FromQuery] string Status)
+        {
+            if (_context.CommandeCosplays == null)
+            {
+                return NotFound();
+            }
 
+            var commandes = await _context.CommandeCosplays
+                .Where(c => c.ClientNom == ClientID && c.Status == Status)
+                .ToListAsync();
+
+            if (commandes == null || !commandes.Any())
+            {
+                return NotFound();
+            }
+
+            return commandes;
+        }*/
         // PUT: api/CommandeCosplays/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCommandeCosplay(int id, CommandeCosplay commandeCosplay)
+        public async Task<IActionResult> PutCommandeCosplays(int id, CommandeCosplays commandeCosplays)
         {
-            if (id != commandeCosplay.CommandeCosplayID)
+            if (id != commandeCosplays.CommandeCosplaysID)
             {
                 return BadRequest();
             }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
-            _context.Entry(commandeCosplay).State = EntityState.Modified;
+
+            _context.Entry(commandeCosplays).State = EntityState.Modified;
 
             try
             {
@@ -83,7 +90,7 @@ namespace ProjectCosplay.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CommandeCosplayExists(id))
+                if (!CommandeCosplaysExists(id))
                 {
                     return NotFound();
                 }
@@ -99,32 +106,27 @@ namespace ProjectCosplay.Controllers
         // POST: api/CommandeCosplays
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CommandeCosplay>> PostCommandeCosplay(CommandeCosplay commandeCosplay)
+        public async Task<ActionResult<CommandeCosplays>> PostCommandeCosplays(CommandeCosplays commandeCosplays)
         {
-            if (_context.CommandeCosplay == null)
+            if (_context.CommandeCosplays == null)
             {
-                return Problem("Entity set 'ProjectCosplayContext.CommandeCosplay'  is null.");
+                return Problem("Entity set 'ProjectCosplayContext.CommandeCosplays'  is null.");
             }
             if (!IsAdmin())
             {
                 return NotFound();
             }
-            _context.CommandeCosplay.Add(commandeCosplay);
+            _context.CommandeCosplays.Add(commandeCosplays);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCommandeCosplay", new { id = commandeCosplay.CommandeCosplayID }, commandeCosplay);
+            return CreatedAtAction("GetCommandeCosplays", new { id = commandeCosplays.CommandeCosplaysID }, commandeCosplays);
         }
 
         // DELETE: api/CommandeCosplays/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCommandeCosplay(int id)
+        public async Task<IActionResult> DeleteCommandeCosplays(int id)
         {
-            if (_context.CommandeCosplay == null)
-            {
-                return NotFound();
-            }
-            var commandeCosplay = await _context.CommandeCosplay.FindAsync(id);
-            if (commandeCosplay == null)
+            if (_context.CommandeCosplays == null)
             {
                 return NotFound();
             }
@@ -132,16 +134,21 @@ namespace ProjectCosplay.Controllers
             {
                 return NotFound();
             }
+            var commandeCosplays = await _context.CommandeCosplays.FindAsync(id);
+            if (commandeCosplays == null)
+            {
+                return NotFound();
+            }
 
-            _context.CommandeCosplay.Remove(commandeCosplay);
+            _context.CommandeCosplays.Remove(commandeCosplays);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CommandeCosplayExists(int id)
+        private bool CommandeCosplaysExists(int id)
         {
-            return (_context.CommandeCosplay?.Any(e => e.CommandeCosplayID == id)).GetValueOrDefault();
+            return (_context.CommandeCosplays?.Any(e => e.CommandeCosplaysID == id)).GetValueOrDefault();
         }
 
         private bool IsAdmin()

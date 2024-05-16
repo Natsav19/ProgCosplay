@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProjectCosplay.Authentification;
 using ProjectCosplay.Data;
 using ProjectCosplay.Models;
 
-namespace ProjectCosplay.Controllers
+namespace exemple_API_ASPNET.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,56 +25,44 @@ namespace ProjectCosplay.Controllers
 
         // GET: api/Commandes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Commande>>> GetCommande()
+        public async Task<ActionResult<IEnumerable<Commandes>>> GetCommandes()
         {
-            if (_context.Commande == null)
-            {
-                return NotFound();
-            }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
-            return await _context.Commande.ToListAsync();
+          if (_context.Commandes == null)
+          {
+              return NotFound();
+          }
+            return await _context.Commandes.ToListAsync();
         }
 
         // GET: api/Commandes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Commande>> GetCommande(int id)
+        public async Task<ActionResult<Commandes>> GetCommandes(int id)
         {
-            if (_context.Commande == null)
-            {
-                return NotFound();
-            }
-            var commande = await _context.Commande.FindAsync(id);
+          if (_context.Commandes == null)
+          {
+              return NotFound();
+          }
+            var commandes = await _context.Commandes.FindAsync(id);
 
-            if (commande == null)
-            {
-                return NotFound();
-            }
-            if (!IsAdmin())
+            if (commandes == null)
             {
                 return NotFound();
             }
 
-            return commande;
+            return commandes;
         }
 
         // PUT: api/Commandes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCommande(int id, Commande commande)
+        public async Task<IActionResult> PutCommandes(int id, Commandes commandes)
         {
-            if (id != commande.CommandeID)
+            if (id != commandes.CommandesID)
             {
                 return BadRequest();
             }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
 
-            _context.Entry(commande).State = EntityState.Modified;
+            _context.Entry(commandes).State = EntityState.Modified;
 
             try
             {
@@ -84,7 +70,7 @@ namespace ProjectCosplay.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CommandeExists(id))
+                if (!CommandesExists(id))
                 {
                     return NotFound();
                 }
@@ -100,59 +86,41 @@ namespace ProjectCosplay.Controllers
         // POST: api/Commandes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Commande>> PostCommande(Commande commande)
+        public async Task<ActionResult<Commandes>> PostCommandes(Commandes commandes)
         {
-            if (_context.Commande == null)
-            {
-                return Problem("Entity set 'ProjectCosplayContext.Commande'  is null.");
-            }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
-            _context.Commande.Add(commande);
+          if (_context.Commandes == null)
+          {
+              return Problem("Entity set 'ProjectCosplayContext.Commandes'  is null.");
+          }
+            _context.Commandes.Add(commandes);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCommande", new { id = commande.CommandeID }, commande);
+            return CreatedAtAction("GetCommandes", new { id = commandes.CommandesID }, commandes);
         }
 
         // DELETE: api/Commandes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCommande(int id)
+        public async Task<IActionResult> DeleteCommandes(int id)
         {
-            if (_context.Commande == null)
+            if (_context.Commandes == null)
             {
                 return NotFound();
             }
-            var commande = await _context.Commande.FindAsync(id);
-            if (commande == null)
-            {
-                return NotFound();
-            }
-            if (!IsAdmin())
+            var commandes = await _context.Commandes.FindAsync(id);
+            if (commandes == null)
             {
                 return NotFound();
             }
 
-            _context.Commande.Remove(commande);
+            _context.Commandes.Remove(commandes);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CommandeExists(int id)
+        private bool CommandesExists(int id)
         {
-            return (_context.Commande?.Any(e => e.CommandeID == id)).GetValueOrDefault();
-        }
-
-        private bool IsAdmin()
-        {
-            var currentUser = HttpContext.User;
-            if (currentUser.HasClaim(c => c.Type ==
-            ClaimTypes.Role))
-                return RolesUtilisateurs.Administrateur == currentUser.Claims.First(c =>
-                c.Type == ClaimTypes.Role).Value;
-            return false;
+            return (_context.Commandes?.Any(e => e.CommandesID == id)).GetValueOrDefault();
         }
     }
 }

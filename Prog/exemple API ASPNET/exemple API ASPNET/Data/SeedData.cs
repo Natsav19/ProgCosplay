@@ -24,7 +24,7 @@ namespace ProjectCosplay.Data
                 new Models.Cosplay { Titre = "JYakeji", Contenu = "10 pièces de cosplay japonais Demon Slayer : Kimetsu no Yaiba Nezuko Kamado Cosplay Kimono avec perruque, convient pour le cosplay.", Image = "./image_cosplay/nezuko.jpg", Prix = 49.99, nbInventaire = 10, Quantite = 1, ProprietaireId = "alice" },
                 new Models.Cosplay { Titre = "GRACEART", Contenu = "Japonais Yukata Kimono Costume.", Image = "./image_cosplay/yukata.jpg", Prix = 42.99, nbInventaire = 10, Quantite = 1, ProprietaireId = "alice" });
                 context.SaveChanges();
-            }
+            } 
             return;
         }
     }

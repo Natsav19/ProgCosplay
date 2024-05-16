@@ -29,20 +29,20 @@ namespace ProjectCosplay.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cosplay>>> GetCosplay()
         {
-          if (_context.Cosplay == null)
-          {
-              return NotFound();
-          }
-          return await _context.Cosplay.ToListAsync();
+            if (_context.Cosplay == null)
+            {
+                return NotFound();
+            }
+            return await _context.Cosplay.ToListAsync();
         }
         // GET: api/Cosplays/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cosplay>> GetCosplay(int id)
         {
-          if (_context.Cosplay == null)
-          {
-              return NotFound();
-          }
+            if (_context.Cosplay == null)
+            {
+                return NotFound();
+            }
             var cosplay = await _context.Cosplay.FindAsync(id);
 
             if (cosplay == null)
@@ -56,18 +56,31 @@ namespace ProjectCosplay.Controllers
         // PUT: api/Cosplays/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCosplay(int id, 
-            [Bind(nameof(Cosplay.CosplayID), nameof(Cosplay.Titre))]Cosplay cosplay)
+        public async Task<IActionResult> PutCosplay(int id,
+    [Bind(nameof(Cosplay.CosplayID), nameof(Cosplay.Titre))] Cosplay cosplay)
         {
             if (id != cosplay.CosplayID)
             {
                 return BadRequest();
             }
+
+            var existingEntity = _context.Cosplay.Local.FirstOrDefault(entry => entry.CosplayID == id);
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
             var cosplayBD = await _context.Cosplay.FindAsync(id);
-            if(cosplayBD.ProprietaireId == GetUserName() || IsAdmin())
+            if (cosplayBD == null)
+            {
+                return NotFound();
+            }
+
+            if (cosplayBD.ProprietaireId == GetUserName() || IsAdmin())
             {
                 cosplayBD.Titre = cosplay.Titre;
-                _context.Entry(cosplay).State = EntityState.Modified;
+                _context.Entry(cosplayBD).State = EntityState.Modified;
+
                 try
                 {
                     await _context.SaveChangesAsync();
@@ -83,8 +96,11 @@ namespace ProjectCosplay.Controllers
                         throw;
                     }
                 }
+
+                return NoContent();
             }
-            return NoContent();
+
+            return Unauthorized();
         }
 
         // POST: api/Cosplays
@@ -92,10 +108,10 @@ namespace ProjectCosplay.Controllers
         [HttpPost]
         public async Task<ActionResult<Cosplay>> PostCosplay([Bind(nameof(Cosplay.Titre))] Cosplay cosplay)
         {
-          if (_context.Cosplay == null)
-          {
-              return Problem("Entity set 'exemple_API_ASPNETContext.Cosplay'  is null.");
-          }
+            if (_context.Cosplay == null)
+            {
+                return Problem("Entity set 'exemple_API_ASPNETContext.Cosplay'  is null.");
+            }
             cosplay.ProprietaireId = GetUserName();
             _context.Cosplay.Add(cosplay);
             await _context.SaveChangesAsync();
@@ -128,23 +144,23 @@ namespace ProjectCosplay.Controllers
             return (_context.Cosplay?.Any(e => e.CosplayID == id)).GetValueOrDefault();
         }
 
-        private string? GetUserName() 
-        { 
-            var currentUser = HttpContext.User; 
-            if (currentUser.HasClaim(c => c.Type == ClaimTypes.Name)) 
+        private string? GetUserName()
+        {
+            var currentUser = HttpContext.User;
+            if (currentUser.HasClaim(c => c.Type == ClaimTypes.Name))
                 return currentUser.Claims.FirstOrDefault(c => c.Type ==
                 ClaimTypes.Name)?.Value;
             return null;
         }
 
-        private bool IsAdmin() 
-        { 
-            var currentUser = HttpContext.User; 
-            if (currentUser.HasClaim(c => c.Type == 
-            ClaimTypes.Role)) 
-                return RolesUtilisateurs.Administrateur == currentUser.Claims.First(c => 
-                c.Type == ClaimTypes.Role).Value; 
-            return false; 
+        private bool IsAdmin()
+        {
+            var currentUser = HttpContext.User;
+            if (currentUser.HasClaim(c => c.Type ==
+            ClaimTypes.Role))
+                return RolesUtilisateurs.Administrateur == currentUser.Claims.First(c =>
+                c.Type == ClaimTypes.Role).Value;
+            return false;
         }
     }
 }
