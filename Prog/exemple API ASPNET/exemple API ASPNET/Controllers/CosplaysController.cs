@@ -79,6 +79,10 @@ namespace ProjectCosplay.Controllers
             if (cosplayBD.ProprietaireId == GetUserName() || IsAdmin())
             {
                 cosplayBD.Titre = cosplay.Titre;
+                cosplayBD.Quantite = cosplay.Quantite;
+                cosplayBD.Prix = cosplay.Prix;
+                cosplayBD.Contenu = cosplay.Contenu;
+
                 _context.Entry(cosplayBD).State = EntityState.Modified;
 
                 try

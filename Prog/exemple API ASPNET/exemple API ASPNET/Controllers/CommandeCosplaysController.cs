@@ -53,8 +53,8 @@ namespace exemple_API_ASPNET.Controllers
 
             return commandeCosplays;
         }
-        /*[HttpGet]
-        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays([FromQuery] string ClientID, [FromQuery] string Status)
+        [HttpGet("{ClientID,Status}")]
+        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays(string ClientID,  string Status)
         {
             if (_context.CommandeCosplays == null)
             {
@@ -71,7 +71,8 @@ namespace exemple_API_ASPNET.Controllers
             }
 
             return commandes;
-        }*/
+        }
+
         // PUT: api/CommandeCosplays/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -112,10 +113,6 @@ namespace exemple_API_ASPNET.Controllers
             {
                 return Problem("Entity set 'ProjectCosplayContext.CommandeCosplays'  is null.");
             }
-            if (!IsAdmin())
-            {
-                return NotFound();
-            }
             _context.CommandeCosplays.Add(commandeCosplays);
             await _context.SaveChangesAsync();
 
@@ -127,10 +124,6 @@ namespace exemple_API_ASPNET.Controllers
         public async Task<IActionResult> DeleteCommandeCosplays(int id)
         {
             if (_context.CommandeCosplays == null)
-            {
-                return NotFound();
-            }
-            if (!IsAdmin())
             {
                 return NotFound();
             }
