@@ -1,0 +1,24 @@
+.card-panier
+{
+    background-color: #FFD8DF;
+}
+
+p{
+    color: #F05A75;
+    font-weight: bold;
+}
+h5{
+    color: #F05A75;
+    font-weight: bold;
+}
+.Achat
+{
+    background-color: #da2ea0;
+    border-color: #da2ea0;
+
+}
+.Achat:hover
+{
+    background-color: #F05A75;
+    border-color: #F05A75;
+}

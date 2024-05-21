@@ -1,0 +1,51 @@
+/* Background * */
+.navbar {
+  background-color: #F05A75;
+}
+
+.search {
+  background-color: #F05A75;
+}
+
+.sidebar, .card, .footer {
+  background-color: #FB9DAE;
+}
+
+body {
+  background: #FFD8DF;
+}
+
+.card {
+  border: none;
+}
+
+body, .navlink, .nav-toggler-icon, .card, .card-text, .read-more-link, footer {
+  color: #EEEEEE;
+}
+
+p {
+  font-family: "Ashito", sans-serif;
+}
+
+h5 {
+  font-family: "Ashito", serif;
+}
+
+@media (max-width: 767px) 
+{
+  .AllMight {
+    width: "80vw";
+    top: "40vh"  
+  }
+  .Hand {
+    width: "50vw";
+    top: "52vh";
+    right: "0vw";
+  }
+}
+
+.InscriptionButton {
+  color: #00df13;
+}
+
+/*# sourceMappingURL=bootstrap.css.map */

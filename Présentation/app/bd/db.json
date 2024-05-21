@@ -1,0 +1,372 @@
+{
+  "Publication": [
+    {
+      "titre": "Tenu de Goku",
+      "Contenu": "YXHZVON Costume de Manga Cosplay, Déguisement pour Saiyan Dragon ball pour Halloween Fête Carnaval Party.",
+      "image": "./image_cosplay/goku.jpg",
+      "prix": 30.99,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "7"
+    },
+    {
+      "titre": "Tenu de Dracaufeu",
+      "Contenu": "Amscan Combinaison à capuche unisexe sous licence officielle Pokémon Charizard pour enfants.",
+      "image": "./image_cosplay/dracaufeu.jpg",
+      "prix": 15.55,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "8"
+    },
+    {
+      "titre": "Zyimsva Maid Outfit",
+      "Contenu": " Femme Lolita FrançAis Maid Cosplay Costume Maid Dress - Costume de maid - Costume sexy et chaussettes.",
+      "image": "./image_cosplay/maid.jpg",
+      "prix": 16.79,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "9"
+    },
+    {
+      "titre": "Déguisement Akatsuki",
+      "Contenu": "Adulte Enfant Cape, Akatsuki Cosplay Anneau Bandeau Bague Collier Accessoires Carnaval Tenue Manga pour Homme Femme Fille Garcon.",
+      "image": "./image_cosplay/akatsuki.jpg",
+      "prix": 21.66,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "10"
+    },
+    {
+      "titre": "JYakeji",
+      "Contenu": "10 pièces de cosplay japonais Demon Slayer : Kimetsu no Yaiba Nezuko Kamado Cosplay Kimono avec perruque, convient pour le cosplay.",
+      "image": "./image_cosplay/nezuko.jpg",
+      "prix": 49.99,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "11"
+    },
+    {
+      "titre": "GRACEART",
+      "Contenu": "Japonais Yukata Kimono Costume.",
+      "image": "./image_cosplay/yukata.jpg",
+      "prix": 42.99,
+      "quantite": 1,
+      "nbInventaire": 10,
+      "id": "12"
+    }
+  ],
+  "Commentaire": [
+    {
+      "id": "1",
+      "publicationLier": 7,
+      "date": "14/02/2024",
+      "Contenu": "J'ai adoré cet article ! Les cosplays présentés sont incroyables."
+    },
+    {
+      "id": "2",
+      "publicationLier": 7,
+      "date": "14/02/2024",
+      "Contenu": "Merci pour cet article, très inspirant !"
+    },
+    {
+      "id": "3",
+      "publicationLier": 7,
+      "date": "14/02/2024",
+      "Contenu": "Les cosplays sont vraiment impressionnants. Bravo aux artistes !"
+    },
+    {
+      "id": "4",
+      "publicationLier": 8,
+      "date": "14/02/2024",
+      "Contenu": "J'aimerais tellement pouvoir fabriquer une armure de cosplay comme ça !"
+    },
+    {
+      "id": "5",
+      "publicationLier": 9,
+      "date": "14/02/2024",
+      "Contenu": "Le monde du cosplay professionnel est fascinant. Merci pour cette interview !"
+    },
+    {
+      "id": "6",
+      "publicationLier": 12,
+      "date": "14/02/2024",
+      "Contenu": "Super article ! J'ai déjà hâte de découvrir les prochains cosplays à la mode."
+    },
+    {
+      "id": "7",
+      "publicationLier": 10,
+      "date": "14/02/2024",
+      "Contenu": "Merci pour ce tutoriel. J'ai enfin osé me lancer dans la fabrication d'une armure !"
+    }
+  ],
+  "CommandeCosplay": [
+    {
+      "CosplayID": "7",
+      "Prix": 30.99,
+      "Titre": "Tenu de Goku",
+      "Quantite": 1,
+      "Image": "./image_cosplay/goku.jpg",
+      "Status": "Acheté",
+      "id": "c3c9",
+      "ClientID": "alice"
+    },
+    {
+      "id": "93c8",
+      "CosplayID": 8,
+      "Titre": "Tenu de Dracaufeu",
+      "Prix": 15.55,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "Quantite": 2,
+      "ClientID": "alice"
+    },
+    {
+      "id": "3f8f",
+      "CosplayID": 9,
+      "Prix": 16.79,
+      "Titre": "Zyimsva Maid Outfit",
+      "Image": "./image_cosplay/maid.jpg",
+      "Status": "Acheté",
+      "Quantite": 1,
+      "ClientID": "alice"
+    },
+    {
+      "id": "bccd",
+      "CosplayID": 7,
+      "Prix": 30.99,
+      "Titre": "Tenu de Goku",
+      "Quantite": 1,
+      "Image": "./image_cosplay/goku.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "fc9a",
+      "CosplayID": 10,
+      "Prix": 21.66,
+      "Titre": "Déguisement Akatsuki",
+      "Quantite": 1,
+      "Image": "./image_cosplay/akatsuki.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "93f5",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 2,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "0f2d",
+      "CosplayID": 13,
+      "Prix": 17.99,
+      "Titre": "Pokemon Flareon",
+      "Quantite": 1,
+      "Image": "./image_cosplay/Pyroli.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "a6c1",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 2,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "7f86",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 2,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "6ca3",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 1,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "5a00",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 1,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "b5f2",
+      "CosplayID": 8,
+      "Prix": 15.55,
+      "Titre": "Tenu de Dracaufeu",
+      "Quantite": 1,
+      "Image": "./image_cosplay/dracaufeu.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "f131",
+      "CosplayID": 11,
+      "Prix": 49.99,
+      "Titre": "JYakeji",
+      "Quantite": 10,
+      "Image": "./image_cosplay/nezuko.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    },
+    {
+      "id": "0c28",
+      "CosplayID": 9,
+      "Prix": 16.79,
+      "Titre": "Zyimsva Maid Outfit",
+      "Quantite": 10,
+      "Image": "./image_cosplay/maid.jpg",
+      "Status": "Acheté",
+      "ClientID": "alice"
+    }
+  ],
+  "Commande": [
+    {
+      "CommandeID": "1",
+      "PrixTotal": 30.99,
+      "NomClient": "alice",
+      "id": "cc90"
+    },
+    {
+      "id": "48f2",
+      "PrixTotal": 0,
+      "NomClient": "alice"
+    },
+    {
+      "id": "e757",
+      "PrixTotal": 0,
+      "NomClient": "alice"
+    },
+    {
+      "id": "c273",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "65e8",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "5e8a",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "ceb5",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "91a1",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "ab6e",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "220b",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "f914",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "00cc",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "b48b",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "2969",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "9100",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "abb8",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "2465",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "10ce",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "1800",
+      "PrixTotal": 131.53,
+      "NomClient": "alice"
+    },
+    {
+      "id": "740e",
+      "PrixTotal": 157.94,
+      "NomClient": "alice"
+    },
+    {
+      "id": "a7cf",
+      "PrixTotal": 142.39,
+      "NomClient": "alice"
+    },
+    {
+      "id": "aa9e",
+      "PrixTotal": 515.45,
+      "NomClient": "alice"
+    },
+    {
+      "id": "626a",
+      "PrixTotal": 167.89999999999998,
+      "NomClient": "alice"
+    },
+    {
+      "id": "416c",
+      "PrixTotal": null,
+      "NomClient": "Tierry"
+    },
+    {
+      "id": "78a0",
+      "PrixTotal": null,
+      "NomClient": "Tierry"
+    }
+  ]
+}

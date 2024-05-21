@@ -53,8 +53,8 @@ namespace exemple_API_ASPNET.Controllers
 
             return commandeCosplays;
         }
-        [HttpGet("{ClientID,Status}")]
-        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays(string ClientID,  string Status)
+        [HttpGet("client/{ClientNom}/{Status}")]
+        public async Task<ActionResult<IEnumerable<CommandeCosplays>>> GetCommandeCosplays(string ClientNom,  string Status)
         {
             if (_context.CommandeCosplays == null)
             {
@@ -62,14 +62,17 @@ namespace exemple_API_ASPNET.Controllers
             }
 
             var commandes = await _context.CommandeCosplays
-                .Where(c => c.ClientNom == ClientID && c.Status == Status)
+                .Where(c => c.ClientNom == ClientNom && c.Status == Status)
                 .ToListAsync();
 
-            if (commandes == null || !commandes.Any())
+            if (commandes == null)
             {
                 return NotFound();
             }
-
+            if(!commandes.Any())
+            {
+                return BadRequest("Panier Vide");
+            }
             return commandes;
         }
 
